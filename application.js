@@ -114,8 +114,11 @@
         let char = event.keyCode || event.charCode || event.which;
         if(char===8 || char===9 || char===20 || char===13 || char===16 || char===17 || char=== 18 || char===32 || char===18 || char===37 || char===39 || char===38 || char===40 || char===91){
             document.getElementById('sn'+char).className='keyboardNumbs spec active-button';
-        } else{
+        }else if(char === 192 || char === 189 || char === 187||char === 219 || char === 221  ||char === 186 || char === 222 || char === 188 || char === 190 || char === 191 || char === 220){
+            document.getElementById('an'+char).className='keyboardNumbs active-button';
+        } else {
         let s = String.fromCharCode(char).toLowerCase();
+        console.log(s);
         document.getElementById(s).className='keyboardNumbs active-button';}
     });
 
@@ -123,9 +126,11 @@
         let char = event.keyCode || event.charCode || event.which;
         if(char===8 || char===9 || char===20 || char===13 || char===16 || char===17 || char=== 18 || char===32 || char===18 || char===37 || char===39 || char===38 || char===40 || char===91){
             document.getElementById('sn'+char).className = 'keyboardNumbs spec';
+        }else if(char === 192 || char === 189 || char === 187||char === 219 || char === 221  ||char === 186 || char === 222 || char === 188 || char === 190 || char === 191 || char === 220){
+            document.getElementById('an'+char).className = 'keyboardNumbs letter';
         }else {
             let s = String.fromCharCode(char).toLowerCase();
-            document.getElementById(s).className = 'keyboardNumbs ';
+            document.getElementById(s).className = 'keyboardNumbs letter';
         }
     });
 
